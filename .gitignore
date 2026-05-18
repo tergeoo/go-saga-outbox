@@ -1,0 +1,22 @@
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store
+
+# Local environment files (commit only .env.dist templates)
+.env
+
+# Local planning / scratch notes
+PLAN.md
+PHASE*.md
+STATUS.md
+inventory/PLAN.md
+
+# Build artifacts
+/bin/
+/dist/
+
+# Local logs
+*.log

@@ -1,0 +1,26 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Сервисы запускаются на хосте (через make run-*), не в compose,
+  # поэтому host.docker.internal вместо service name.
+  - job_name: orchestrator
+    static_configs:
+      - targets: ["host.docker.internal:8086"]
+
+  - job_name: payment
+    static_configs:
+      - targets: ["host.docker.internal:9101"]
+
+  - job_name: inventory
+    static_configs:
+      - targets: ["host.docker.internal:9102"]
+
+  - job_name: notification
+    static_configs:
+      - targets: ["host.docker.internal:9103"]
